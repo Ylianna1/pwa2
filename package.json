@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "http-server": "^14.1.0",
+    "jquery": "^3.6.0"
+  },
+  "name": "shop",
+  "description": " ",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ylianna1/pwa2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ylianna1/pwa2/issues"
+  },
+  "homepage": "https://github.com/Ylianna1/pwa2#readme"
+}
