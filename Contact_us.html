@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewpor" content="width=320, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" content="text/css" href="css/style.css">
+	<link rel="stylesheet" content="text/css" href="css/responsive.css">
+  <title>Contact us</title>
+ <style>
+
+   body {
+	background: #F7F7F7;
+	
+   }
+td {padding: 20px;}
+
+   </style>
+</head>
+<body>
+
+
+<div class="Header">
+<pre>
+</pre>
+	<nav class="navbar navbar-expand-lg navbar-light">
+ <h1 id="logo"><a href="index.html"><img src="./images/Logo.png" ></a></h1>
+<div style=" margin-left: auto;  margin-right: 4.05em;">
+			<div class="container">
+     		 	<input type="text" maxlength="12" placeholder="Search" class="searchbar">
+      			<img src="./images/ico_search.png" alt="search icon" class="button">
+   			</div>
+  <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="overflow-anchor: none;">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div   class="text_heard">
+  <div class="collapse navbar-collapse" id="navbarNav" style="display: none;">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active" style="margin-right:10px;">
+        <a href="index.html" style="color: #324950;">Home</a></li>
+      </li>
+      <li class="nav-item" style="margin-right:10px;">
+        <a href="Tomato_all.html" style="color: #324950;">Company </a></li>
+      </li>
+      <li class="nav-item" style="margin-right:10px;">
+        <a href="Tomato_all.html" style="color: #324950;">Profile </a></li>
+      </li>
+      <li class="nav-item" style="margin-right:10px;">
+        <a href="Tomato_all.html" style="color: #324950;">Products</a></li>
+      </li>
+     <li class="nav-item" style="margin-right:10px;">
+        <a href="Tomato_all.html" style="color: #324950;">Services </a></li> 
+      </li>
+     <li class="nav-item" style="margin-right:10px;">
+        <a href="Tomato_all.html" style="color: #324950;">R&D </a></li>
+      </li>
+     <li class="nav-item" style="margin-right:10px;">
+       <a href="Contact_us.html" style="color: #324950;">Contact</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
+</nav>
+</div>
+
+
+<div id="app">
+<div class="Banner">
+<img src="images/image7.jpg">
+</div>
+<div>
+<pre>
+
+</pre>
+<div class="row">
+<div class="col-sm-1 col-md-1 col-lg-2"></div>
+<div class="col-sm-1 col-md-5 col-lg-7">
+<pre>
+</pre>
+<P><h1 class="text">Contact us</h1></P>
+<pre>
+</pre>
+	<p><img src="images/Union2.png"></p>
+<table>
+
+	<tr v-if="cart" v-for="i in cart">
+    		<td><img v-bind:src="'img/'+i.img"></td>
+		<td class="text_bold">{{i.title}}</td>
+		<td class="text_mini">{{i.short_text}}</td>
+		<td><a  href="#" @click.prevent="removeFromCart(i.id)" v-if="!orderVisible"><img src="img/крестик.png" style="max-width: 20px;" :id="'remove_'+i.id"></a></td>
+  	</tr>
+	
+</table>
+
+<form action="" method="post" v-on:submit.prevent="makeOrder">
+<div class="row">
+<div class="col-sm-12 col-md-8 col-lg-5">
+  <ul class="text_mini" style="list-style: none;  padding: 0;  margin: 0; margin-right:125px;">
+    <li>
+      <label for="name">Name*</label>
+      <p><input v-model="contactFields.name" required placeholder="Ваше имя"></p>
+    </li>
+    <li>
+      <label for="company">Company Name</label>
+      <p><input v-model="contactFields.company"></p>
+    </li>
+<li>
+      <label for="position">Position</label>
+      <p><input v-model="contactFields.position"></p>
+    </li>
+    <li>
+      <label for="city">City</label>
+      <p><input v-model="contactFields.city"></p>
+    </li>
+    <li>
+      <label for="Country">Country</label>
+      <p><input v-model="contactFields.country"></p>
+    </li>
+	<li>
+      <label for="telephone">Telephone</label>
+      <p><INPUT v-model="contactFields.telephone"><BR></p>
+    </li>
+    <li>
+      <label for="mail">Email*</label>
+      <p><input type="email" v-model="contactFields.email" required placeholder="Ваше Email"></p>
+    </li>
+	</ul>
+</div>
+<div class="col-sm-12 col-md-8 col-lg-5">
+<ul class="text_mini" style="list-style: none;  padding: 0;  margin: 0;">
+	<li>
+      		<label for="you">You are a</label>
+      		<p><select v-model="contactFields.you_are">
+  		<option value="1">seed producer</option>
+  		<option value="2">farmer</option>
+  		<option value="3">customer</option>
+  		<option value="4">partner</option>
+		</select>
+    	</li>
+	<li>
+     	 	<label for="specify">If other, please specify</label>
+      		<p><input v-model="contactFields.specify" style="width: 635px;"></p>
+    	</li>
+    	<li>
+      		<label for="msg">You are interested in</label>
+      		<p><textarea v-model="contactFields.msg"></textarea></p>
+    	</li>
+<li>
+     	 	<label for="code">Please type this code</label>
+		<p> <img src="images/image12.png"><input type="code" id="code" required placeholder=" " style="width: 125px;">
+		<button type="submit" style=" background:#57984C; border: 2px solid #57984C; color: white; width: 225px; height: 55px; border-radius: 30px ;margin-left:0.3%; font-size: 17px;">Send Message</button></p>
+    	</li>
+ </ul>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+<div class="panel_cont">
+<div align="center" class="text_mini" style="margin-top: 36px;">
+<p class="text_big">Our Address</p>
+<p><hr width="183" size="2" color="#57984C"/></p>
+<p >AGRIDERA Seeds & Agriculture Ltd.</p>
+<p style="line-height: 1;">P.O Box 103,</p>
+<p style="line-height: 1;">Gedera 70750, Israel.</p>
+<p style="line-height:1;">Telephone: <h7 style="color: #57984C;">+972 8 944 9222</h7></p>
+
+</div>
+</div>
+
+
+<div class="footer">
+	<div class="row">
+	<div class="col-sm-3 col-md-3 col-lg-3"></div>
+
+	<div class="col-sm-7 col-md-5 col-lg-5">
+		<pre class="text_with">
+
+PROFILE 	MANAGEMENT 	 PRODUCTS 	 R&D 	 LINKS 	 SITEMAP 	CONTACT</pre>
+	</div>	
+	<div class="col-sm-3 col-md-3 col-lg-3">
+		<pre>
+</pre>
+			<img src="images/Ico_fb.png">
+			<img src="images/Ico_in.png">
+			<img src="images/Ico_inst.png">
+			<img src="images/Ico_tube.png">
+			<img src="images/Ico_tw.png">
+		</div>
+	</div>
+</div>
+<div class="footer2" >
+
+<p align="center"><font size="2" color="#B9B9B9" '>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</font></p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="./js/main.js"></script>
+
+</body> 
+</html>

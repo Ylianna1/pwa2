@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" content="text/css" href="css/style.css">
+	<link rel="stylesheet" content="text/css" href="css/responsive.css">
+
+	<title>Tomato all "Mushrooms"</title>
+	<style>
+		body {
+			background: #FFF8DC;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="Header">
+		<pre>
+</pre>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<h1 id="logo"><a href="index.html"><img src="./images/Logo.png"></a></h1>
+			<div style=" margin-left: auto;  margin-right: 4.05em;">
+				<div class="container">
+					<input type="text" maxlength="12" placeholder="Search" class="searchbar">
+					<img src="./images/ico_search.png" alt="search icon" class="button">
+				</div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="overflow-anchor: none;">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="text_heard">
+					<div class="collapse navbar-collapse" id="navbarNav" style="display: none;">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active" style="margin-right:10px;">
+								<a href="index.html" style="color: #324950;">Home</a>
+							</li>
+							</li>
+							<li class="nav-item" style="margin-right:10px;">
+								<a href="Tomato_all.html" style="color: #324950;">Company </a>
+							</li>
+							</li>
+							<li class="nav-item" style="margin-right:10px;">
+								<a href="Tomato_all.html" style="color: #324950;">Profile </a>
+							</li>
+							</li>
+							<li class="nav-item" style="margin-right:10px;">
+								<a href="Tomato_all.html" style="color: #324950;">Products</a>
+							</li>
+							</li>
+							<li class="nav-item" style="margin-right:10px;">
+								<a href="Tomato_all.html" style="color: #324950;">Services </a>
+							</li>
+							</li>
+							<li class="nav-item" style="margin-right:10px;">
+								<a href="Tomato_all.html" style="color: #324950;">R&D </a>
+							</li>
+							</li>
+							<li class="nav-item" style="margin-right:10px;">
+								<a href="Contact_us.html" style="color: #324950;">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+	<div class="Banner">
+		<img src="img/c953e5971ec507f419b2604dfead941b312b767cr1-1400-400v2_hq.jpg" width="100%">
+	</div>
+
+	<div style="margin-left: 17%; margin-right:auto;">
+		<P>
+		<h1 class="text">Mushrooms</h1>
+		</P>
+		<pre>
+</pre>
+		<p><img src="images/Union2.png"></p>
+	</div>
+
+	<div id="app">
+		<div class="main">
+			<ul class="cards">
+				<li class="cards_item" v-for="product in products" id="product.id" :key="product.id">
+					<div class="card"><a :href="'Tomato_one.html#'+product.id">
+							<div class="card_image"><img v-bind:src="product.img"></div>
+							<div class="card_content">
+								<h2 class="card_title">{{ product.title }}</h2>
+								<p class="card_text">{{ product.short_text }}</p>
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="footer">
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3"></div>
+
+			<div class="col-sm-7 col-md-5 col-lg-5">
+				<pre class="text_with">
+
+PROFILE 	MANAGEMENT 	 PRODUCTS 	 R&D 	 LINKS 	 SITEMAP 	CONTACT</pre>
+			</div>
+			<div class="col-sm-3 col-md-3 col-lg-3">
+				<pre>
+</pre>
+				<img src="images/Ico_fb.png">
+				<img src="images/Ico_in.png">
+				<img src="images/Ico_inst.png">
+				<img src="images/Ico_tube.png">
+				<img src="images/Ico_tw.png">
+			</div>
+		</div>
+	</div>
+	<div class="footer2">
+
+		<p align="center">
+			<font size="2" color="#B9B9B9" '>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</font></p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="./js/main.js"></script>
+
+</body>
+
+</html>
