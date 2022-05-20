@@ -8,13 +8,22 @@
   <link rel="stylesheet" content="text/css" href="css/responsive.css">
   <link rel="manifest" href="/manifest.json">
   <title>Homepage</title>
- <style>
+  <style>
    body {
     background:#F7F7F7;
    }
   </style>
 </head>
 <body>
+<script>
+	  if('serviceWorker' in navigator)  {
+		  navigator.serviceWorker
+		  .register('/sw.js')
+		  .then(function() {
+			  console.log('Service worker registered!'); 
+		  });
+	  }
+</script>
 
 <div class="Banner_Home">
 <pre>
