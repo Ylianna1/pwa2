@@ -7,15 +7,24 @@
         <link rel="manifest" href="/manifest.json">
     </head>
     <body>
-       <p style="color:#fff ; font-size: 30px;">Capital</p>       
+        <ul>
+            <div id="caps"></div>
+   </ul>
         <script>
-             fetch("https://restcountries.com/v3.1/region/europe")
-               .then(resolve => resolve.json())
-               .then(data => {
-                   data.forEach(country => {
-                       console.log(country.capital[0]);
-                   });
-               })
-        </script>
+            fetch("https://restcountries.com/v3.1/region/europe")
+                .then(resolve => resolve.json())
+                .then(data => {
+                    const listOfCaps=document.createElement('ul');
+                    listOfCaps.style.columnCount = '2';
+                    listOfCaps.style.columnGap = '50px';
+                    data.forEach((country) =>
+                    {
+                        var listViewItem = document.createElement('li');
+                        listViewItem.appendChild(document.createTextNode(country.capital));
+                        listOfCaps.appendChild(listViewItem);
+                    });
+                    document.getElementById('caps').appendChild(listOfCaps);
+                })
+            </script>
     </body>
 </html>
