@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" content="text/css" href="css/style.css">
+  <link rel="stylesheet" content="text/css" href="css/responsive.css">
+  <link rel="manifest" href="/manifest.json">
+  <title>Homepage</title>
+  <body>
+      <center>
+    <button class="subscribe-for-push">SUBSCRIBE FOR PUSH NOTIFICATIONS</button>
+    </center>
+    <script>
+        function askPermission(){
+            return new Promise(function(resolve, reject){
+                const permissionResult = Notification.requestPermission(function(result){
+                  resolve(result);  
+                });
+  
+                if (permissionResult) {
+                  permissionResult.then(resolve, reject);
+                }
+            })
+            .then(function(permissionResult){
+                if (permissionResult !== 'granted'){
+                    throw new Error('We weren\'t granted permission.');
+                }
+            });
+        }
+  
+        if ('serviceWorker' in navigator){
+            navigator.serviceWorker
+            .register('/sw.js')
+            .then(function() {
+                console.log('Service worker registered!');
+                
+            });
+  
+            navigator.serviceWorker.ready.then(registration =>{
+                if('PushManager' in window){
+                    document.querySelector('button.subscribe-for-push')
+                        .addEventListener('click', () =>{
+                          alert("You will receive notifications");
+                          askPermission()
+                        });
+                }
+            });
+        }
+    </script>
+  </body>
+</head>
